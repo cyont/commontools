@@ -1,0 +1,120 @@
+img, a {
+  text-decoration:none;
+  border:none;
+}
+#popup, #popup1, #popup2, #popup3, #purchase_items {
+  overflow:auto;
+}
+#machine_list {
+	margin-left: 12px;
+	width: 435px;
+	margin-right: 35px;
+	float: left;
+	overflow: auto;
+	height: 500px;
+}
+#machine_list td {
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	border-left: 1px solid #5A85CF;
+	border-top: 1px solid #5A85CF;
+}
+#machine_details {
+	width: 471px;
+	border: 1px solid #5A85CF;
+	float: left;
+	padding-left: 12px;
+	padding-bottom: 10px;
+	height: 488px;
+	overflow:auto;
+}
+#machine_details h2, #machine_details h3 {
+	color:#003366;
+}
+#computer_details_table input, #addc tr input {
+	border: 1px solid #5A85CF;
+	width:100%;
+}
+#add_computer_dialog_table td {
+	padding-top:2px;
+	padding-bottom:2px;
+}
+#purchase_dates_header {
+  margin-left:12px;
+  width:120px;
+}
+#purchase_dates_wrapper {
+  margin-left:12px;
+  width:120px;
+  float:left;
+  overflow:auto;
+  height:500px;
+}
+#purchase_dates {
+  float:left;
+  min-height:500px;
+  height:auto !important;
+  height:500px;
+}
+#purchase_items {
+  width:782px;
+  float:right;
+  padding-left:12px;
+  padding-bottom:10px;
+  border:1px solid #5A85CF;
+  height:488px;
+  margin-right:32px;
+}
+#purchase_date {
+  padding-top:6px;
+  cursor:pointer;
+}
+#software_titles_header {
+  margin-left:12px;
+  width:100%;
+  float:left;
+}
+#software_titles_wrapper {
+  margin-left:12px;
+  width:280px;
+  float:left;
+  overflow:auto;
+  height:500px;
+}
+#software_titles {
+  float:left;
+  min-height:500px;
+  height:auto !important;
+  height:500px;
+}
+#software_licenses {
+  width:646px;
+  float:right;
+  overflow:auto;
+  height:195px;
+  margin-bottom:20px;
+  margin-right:32px;
+}
+#software_licenses td {
+  padding-top:3px;
+  padding-bottom:2px;
+  padding-left:4px;
+  border-left:1px solid #5A85CF;
+  border-top:1px solid #5A85CF;
+}
+#software_computer {
+  width:632px;
+  float:right;
+  padding-left:12px;
+  padding-bottom:10px;
+  border:1px solid #5A85CF;
+  height:273px;
+  margin-bottom:15px;
+  margin-right:32px;
+  overflow:auto;
+}
+#software_title {
+  padding-top:4px;
+  cursor:pointer;
+}

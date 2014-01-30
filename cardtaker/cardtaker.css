@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.tberror{
+		border:1px solid red;	
+	}
+.ct_table{
+	color:#404965;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.ct_table input, .ct_table select{
+	margin:2px; padding:1px;
+}

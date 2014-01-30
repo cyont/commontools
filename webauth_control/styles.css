@@ -1,0 +1,95 @@
+#apps, #users {
+	width: 100%;
+}
+
+#apps, #users th {
+	text-align: left;
+}
+
+#navBar {
+	
+}
+
+#navBar .button {
+	color: black;
+	text-decoration: none;
+	border: 1px black solid;
+	float: left;
+	padding: 2px 5px;
+	font-size: 12px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+}
+
+#navBar .button:last-of-type {
+	border-right-width: 1px;
+}
+
+#navBar .button:hover {
+	text-decoration: underline;
+}
+
+#navBar .button.selected {
+	background: black;
+	color: white;
+}
+
+#content {
+	clear: both;
+	border: 1px solid 
+	black;
+	padding: 12px 8px;
+}
+
+#content .column {
+	float: left;
+	border-left: 1px grey solid;
+	margin: 0px 9px;
+	padding: 0px 20px;
+}
+
+#roles {
+	width: 220px;
+}
+
+#peopleSearch {
+	position: absolute;
+	display: none;
+	min-width: 218px;
+	border: 1px solid black;
+	background: white;
+}
+
+#peopleSearch .person {
+	padding: 2px 6px;
+}
+
+#peopleSearch .person.selected {
+	background: lightyellow;
+}
+
+.userList {
+	width: 20%;
+}
+
+.userList li, #roles li {
+	position: relative;
+	line-height: 24px;
+}
+
+.userList .removeUser, #roles .deleteRole{
+	position: absolute;
+	right: 10px;
+	font-size: 10px;
+	visibility: hidden;
+	cursor: pointer;
+}
+
+.userList li:hover .removeUser, #roles li:hover .deleteRole {
+	visibility: visible;
+}
+
+.userList li .removeUser:hover, #roles .deleteRole:hover {
+	background: black;
+	color: white;
+}
