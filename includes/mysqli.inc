@@ -2,7 +2,7 @@
 class db_mysqli extends mysqli{
 	public $query;
 	function __construct($db = NULL, $host = NULL, $user = 'web', $pass = 'viv3nij'){
-		require('/srv/www/htdocs/commontools/db/mysql_activeserver.inc');
+		require('/var/www/commontools/db/mysql_activeserver.inc');
 		$activeServers = array('mysql_host', 'mysql_host2');
 		
 		if($host == NULL)
@@ -18,7 +18,7 @@ class db_mysqli extends mysqli{
 				
 				@parent::__construct($activeServers[++$active_server], $user, $pass);
 				if($this->connect_errno == 0){
-					file_put_contents('/srv/www/htdocs/commontools/db/mysql_activeserver.inc', '<?php $active_server='.$active_server.'; ?>');
+					file_put_contents('/var/www/commontools/db/mysql_activeserver.inc', '<?php $active_server='.$active_server.'; ?>');
 					return true;
 				}
 				else{
@@ -55,7 +55,8 @@ class db_mysqli extends mysqli{
 	}
 	function connect_error($host, $die){
 		$trace = debug_backtrace();
-		file_put_contents ( "/srv/www/htdocs/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error connecting to ".$host.": ".$this->connect_error.' - '.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
+		file_put_contents ( "/var/www/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error connecting to ".$host.": ".$this->connect_error.' - 
+'.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
 		$this->email_error(" Error connecting to ".$host.": ".$this->connect_error.' - '.$trace[1]['file'].', line '.$trace[1]['line']);
 		if($_SERVER['SERVER_ENV'] == 'staging')
 			die("Could not connect to database.");
@@ -63,7 +64,8 @@ class db_mysqli extends mysqli{
 	}
 	function select_error($db){
 		$trace = debug_backtrace();
-		file_put_contents ( "/srv/www/htdocs/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error selecting ".$db.": ".$this->error.' - '.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
+		file_put_contents ( "/var/www/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error selecting ".$db.": ".$this->error.' - 
+'.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
 		$this->email_error(" Error selecting ".$db.": ".$this->error.' - '.$trace[1]['file'].', line '.$trace[1]['line']);
 		if($_SERVER['SERVER_ENV'] == 'staging')
 			die("Could not select database ".$db.".");
@@ -71,7 +73,8 @@ class db_mysqli extends mysqli{
 	}
 	function query_error(){
 		$trace = debug_backtrace();
-		file_put_contents ( "/srv/www/htdocs/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error executiong ".$this->query.": ".$this->error.' - '.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
+		file_put_contents ( "/var/www/commontools/db/mysql_error.inc" , date(DATE_RSS)." Error executiong ".$this->query.": ".$this->error.' - 
+'.$trace[1]['file'].', line'.$trace[1]['line'].chr(10), FILE_APPEND );
 		$this->email_error(" Error executiong: ".$this->query."; ".$this->error.' - '.$trace[1]['file'].', line '.$trace[1]['line']);
 		if($_SERVER['SERVER_ENV'] == 'staging')
 			print "Error executiong: ".$this->query."; ".$this->error;
@@ -89,7 +92,7 @@ class db_mysqli extends mysqli{
 		define("CRITICAL_EMAIL", "samarketingcritical@gmail.com");
 		define("NONCRITICAL_EMAIL", "samarketingnoise@gmail.com");
 		
-		require_once('/srv/www/htdocs/commontools/phplib/mimemail/htmlMimeMail5.php');
+		require_once('/var/www/commontools/phplib/mimemail/htmlMimeMail5.php');
 		
 		$mail = new htmlMimeMail5();
 	

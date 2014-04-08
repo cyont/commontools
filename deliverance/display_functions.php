@@ -51,7 +51,7 @@ global $dbdeliv;
 		$type = 'static';
 	
 		// include the page tracker code
-		include("/Library/WebServer/commontools/deliverance/page_tracker.php");
+		include("/var/www/commontools/deliverance/page_tracker.php");
 		## end page tracking ##
 		###############################################
 	
@@ -111,7 +111,7 @@ global $dbdeliv;
 		$type = 'random';
 	
 		// include the page tracker code
-		include("/Library/WebServer/commontools/deliverance/page_tracker.php");
+		include("/var/www/commontools/deliverance/page_tracker.php");
 		## end page tracking ##
 		###############################################
 		
@@ -171,7 +171,7 @@ global $dbdeliv;
 		$type = 'sequential';
 	
 		// include the page tracker code
-		include("/Library/WebServer/commontools/deliverance/page_tracker.php");
+		include("/var/www/commontools/deliverance/page_tracker.php");
 		## end page tracking ##
 		###############################################
 
