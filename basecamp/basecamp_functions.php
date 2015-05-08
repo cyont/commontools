@@ -2,8 +2,8 @@
 
 function basecamp_get($uri){
 	$session = curl_init();
-	$username = 'dbf5e62aa618e3a71da76d03999293681a7f2f89';
-	$password = 'X';
+	$username = 'suadmin';
+	$password = 'samk9919';
 	$basecamp_url = 'https://'.$username . ":" . $password.'@uamarketing.basecamphq.com';
 	$url = $basecamp_url.$uri;
 	
@@ -179,6 +179,33 @@ function getProjects(){
 	return $projects;
 }
 
+function getCompanies(){
+	$response = basecamp_get('/companies.xml');
+	
+	//var_dump($response);
+	
+	$companies = array();
+	foreach($response->company as $company){
+		
+		$companies[intval($company->id)] = $company->name.'';	
+	}
+	
+	return $companies;
+}
+function getCompanyPeople($companyID){
+	$response = basecamp_get('/companies/'.$companyID.'/people.xml');
+	
+	
+	$people = array();
+	foreach($response->person as $person){
+		//var_dump($person);
+		$people[intval($person->{'id'}[0])] = $person->{'first-name'}.' '.$person->{'last-name'};
+	}
+	
+	return $people;
+}
+
+
 function getActiveProjectsByCompany(){
 	$response = basecamp_get('/projects.xml');
 	
@@ -240,8 +267,8 @@ function getMarketingPeople(){
 
 //Returns a string containing a link to the new writeboard.  $contents is optional and defaults to an empty string, so if you don't pass it in you will get an empty writeboard.
 function createWriteboard($projID, $title, $contents =''){
-	$username = 'jmasson';
-	$password = '01857085';
+	$username = 'suadmin';
+	$password = 'samk9919';
   
   	$session = curl_init();
 	$url = 'https://uamarketing.basecamphq.com/login';
